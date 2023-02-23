@@ -73,8 +73,13 @@ func main() {
 		}
 	}
 
+	switchedString := "are"
+	if !switchDoor {
+		switchedString = "isn't"
+	}
+
 	// Calculate the winning chance
 	winningChance := float64(totalWon) / float64(gamesToPlay) * 100.0
 	fmt.Printf("In %d games\nGames won: %d\nGames Lost: %d\n", gamesToPlay, totalWon, totalLost)
-	fmt.Printf("This gives you a winning chance of %.2f%% percent\n", winningChance)
+	fmt.Printf("This gives you a winning chance of %.2f%% percent if the doors %s switched\n", winningChance, switchedString)
 }
