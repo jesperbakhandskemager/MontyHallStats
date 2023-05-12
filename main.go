@@ -46,7 +46,7 @@ func play_game(switchDoor bool) bool {
 
 func main() {
 	// How many games to play
-	gamesToPlay := 10000
+	gamesToPlay := 100000
 	games := make([]int, gamesToPlay)
 
 	// Should the door be switched?
@@ -73,13 +73,13 @@ func main() {
 		}
 	}
 
-	switchedString := "are"
+	switchedString := "switched the door"
 	if !switchDoor {
-		switchedString = "isn't"
+		switchedString = "kept the original door"
 	}
 
 	// Calculate the winning chance
 	winningChance := float64(totalWon) / float64(gamesToPlay) * 100.0
-	fmt.Printf("In %d games\nGames won: %d\nGames Lost: %d\n", gamesToPlay, totalWon, totalLost)
-	fmt.Printf("This gives you a winning chance of %.2f%% percent if the doors %s switched\n", winningChance, switchedString)
+	fmt.Printf("In %d games\nGames won: %d\nGames lost: %d\n", gamesToPlay, totalWon, totalLost)
+	fmt.Printf("This gave you an average of %.2f%% percent chance of winning if you %s\n", winningChance, switchedString)
 }
